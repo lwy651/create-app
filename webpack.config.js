@@ -56,7 +56,7 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          'style-loader', 'css-loader?modules', 'less-loader'
+          'style-loader', 'css-loader?modules','less-loader'
         ]
       },
     ]
@@ -70,12 +70,12 @@ module.exports = {
     // prints more readable module names in the browser console on HMR updates
 
     new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false, // remove all comments
-      },
-      compress: {
-        warnings: false
-      }
+      compress: process.env.NODE_ENV === 'production'
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'build.min.css',
+      allChunks: true,
     })
   ]
 };
