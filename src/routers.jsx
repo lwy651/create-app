@@ -1,19 +1,19 @@
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import { HashRouter as Router, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
 import React from 'react';
 import Home from './routers/Home';
 import Login from './routers/Login';
+import Customer from './routers/Customer';
+import Nav from './routers/Nav';
 
 const AppRouters = () => (
   <Router>
     <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/login">About</Link></li>
-      </ul>
-
-      <Route exact path='/' component={Home} />
-      <Route path='/login' component={Login} />
+      <Nav />
+      <Redirect to='/home' />
+      <Route exact path='/home' component={Home} />
+      <Route path='/customer' component={Customer} />
+      <Route path='/mine' component={Login} />
     </div>
   </Router>
 )

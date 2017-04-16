@@ -28,7 +28,6 @@ module.exports = {
     // only- means to only hot reload for successful updates
 
     './index'
-    // the entry point of our app
   ],
   output: {
     filename: 'bundle.js',
@@ -40,7 +39,7 @@ module.exports = {
     // necessary for HMR to know where to load the hot update chunks
   },
 
-  devtool: false,
+  devtool: 'inline-source-map',
 
 
   module: {
@@ -51,14 +50,26 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules', ],
+        use: ['style-loader', 'css-loader?modules&importLoaders=1', ],
+        // use: ExtractTextPlugin.extract({
+        //   fallback: "style-loader",
+        //   use: ['css-loader?modules', 'postcss-loader']
+        // })
       },
       {
         test: /\.less$/,
         use: [
-          'style-loader', 'css-loader?modules','less-loader'
+          'style-loader', 'css-loader?modules&importLoaders=1', 'less-loader'
         ]
+        // use: ExtractTextPlugin.extract({
+        //   fallback: "style-loader",
+        //   use: ['css-loader?modules', 'less-loader', 'postcss-loader']
+        // })
       },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: ['url-loader', ]
+      }
     ]
   },
 
@@ -69,13 +80,15 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     // prints more readable module names in the browser console on HMR updates
 
-    new webpack.optimize.UglifyJsPlugin({
-      compress: process.env.NODE_ENV === 'production'
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   // compress: process.env.NODE_ENV === 'production'
+    //   compress: env.production,
+    //   minimize: true,
+    // }),
 
-    new ExtractTextPlugin({
-      filename: 'build.min.css',
-      allChunks: true,
-    })
+    // new ExtractTextPlugin({
+    //   filename: 'build.min.css',
+    //   allChunks: true,
+    // })
   ]
 };
