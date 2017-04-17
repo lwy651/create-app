@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Login = () => (
-  <div>
-    <h2>ssssdass</h2>
-  </div>
-);
+class Login extends Component {
+  render() {
+    return (
+      <div>
+        个人中心
+      </div>
+    );
+  }
+}
 
 export default Login;

@@ -1,17 +1,17 @@
 module.exports =[
   {
-    title:'主页',
+    title:'首页',
     route:'/home',
-    icon:require('../assets/icon_tabbar.png')
+    icon:'icon_home'
   },
   {
     title:'客服',
     route:'/customer',
-    icon:require('../assets/icon_tabbar.png')
+    icon:'icon_community'
   },
   {
-    title:'个人中心',
+    title:'我的',
     route:'/mine',
-    icon:require('../assets/icon_tabbar.png')
+    icon:'icon_my'
   }
 ]

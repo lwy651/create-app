@@ -4,7 +4,7 @@ class Customer extends Component {
   render() {
     return (
       <div>
-        hahah
+        客服
       </div>
     );
   }
