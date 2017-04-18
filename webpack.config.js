@@ -90,9 +90,9 @@ module.exports = {
     //   minimize: true,
     // }),
 
-    // new ExtractTextPlugin({
-    //   filename: 'build.min.css',
-    //   allChunks: true,
-    // })
+    new ExtractTextPlugin({
+      filename: 'build.min.css',
+      allChunks: true,
+    })
   ]
 };

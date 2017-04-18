@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
-import Slider from 'react-slick'
-import styles from './Banner.less'
+var React = require('react');
+var Slider = require('react-slick');
 
-class Banner extends Component {
-    render () {
+class Banner extends React.Component {
+  render() {
     var settings = {
-      dots: true
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
     };
     return (
-      <div className={styles.container}>
-        <Slider {...settings}>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-        </Slider>
-      </div>
+      <Slider {...settings}>
+        <div><img src='../assets/banner.jpg'/></div>
+        <div><img src='../assets/banner.jpg'/></div>
+        <div><img src='../assets/banner.jpg'/></div>
+      </Slider>
     );
   }
 }
