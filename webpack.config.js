@@ -68,11 +68,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
-        use: ['url-loader', ]
+        use: ['url-loader?limit=8192&name=images/[name].[ext]', ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=public/fonts/[name].[ext]'
+        loader: 'url-loader?name=public/fonts/[name].[ext]'
       }
     ]
   },

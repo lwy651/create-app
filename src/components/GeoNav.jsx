@@ -7,7 +7,7 @@ class GeoNav extends Component {
     return (
       <div className={styles.Nav}>
         <i className={iconStyles.iconfont + ' ' + iconStyles.icon_locationfill} />
-        <span>江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州江苏常州</span>
+        <span>江苏常州新北区银河湾第一城</span>
       </div>
     );
   }
