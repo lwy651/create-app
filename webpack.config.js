@@ -72,7 +72,7 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'url-loader?name=public/fonts/[name].[ext]'
+        loader: 'file-loader?name=public/fonts/[name].[ext]'
       }
     ]
   },
