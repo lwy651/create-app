@@ -20,7 +20,9 @@ class Banner extends React.Component {
     };
     var links = ["one", "two", "three", "four"];
     var items = links.map(function (link,key) {
-      return (<a key={key}>{link}</a>);
+      return (<a key={key}>
+                <img src={require('../assets/yay.jpg')} />
+              </a>);
     });
     return (
       <div className={styles.normal}>
