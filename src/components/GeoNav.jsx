@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './GeoNav.less'
-import iconStyles from '../styles/iconfont.css';
+import iconStyles from '../styles/iconfont.less';
 
 class GeoNav extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.less';
-import iconStyles from '../styles/iconfont.css';
+import iconStyles from '../styles/iconfont.less';
 import nav_items from '../constants/nav_items';
 
 class Nav extends Component {

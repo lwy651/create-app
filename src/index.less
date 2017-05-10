@@ -1,8 +1,12 @@
+@import './theme.less'; 
 :global{
   html{
     background-color: #f8f8f8;
-    font-family: Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+    font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
     color: #333;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    touch-action: manipulation;
   }
   html,body,#root{
     width: 100%;
@@ -20,4 +24,17 @@
   a {
     text-decoration: none;
   }
+
+  ::-webkit-input-placeholder { /* WebKit browsers */ 
+    color: @theme_placeholder_color; 
+  } 
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+    color: @theme_placeholder_color; 
+  } 
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+    color: @theme_placeholder_color; 
+  } 
+  :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+    color: @theme_placeholder_color;
+  } 
 }

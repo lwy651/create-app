@@ -48,19 +48,23 @@ module.exports = {
         use: ['babel-loader', ],
         exclude: /node_modules/
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules&importLoaders=1', ],
-        // use: ExtractTextPlugin.extract({
-        //   fallback: "style-loader",
-        //   use: ['css-loader?modules', 'postcss-loader']
-        // })
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader?modules&importLoaders=1', ],
+      //   })
+      //   // use: ExtractTextPlugin.extract({
+      //   //   fallback: "style-loader",
+      //   //   use: ['css-loader?modules', 'postcss-loader']
+      //   // })
+      // },
       {
         test: /\.less$/,
-        use: [
-          'style-loader', 'css-loader?modules&importLoaders=1', 'less-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ['css-loader?modules&importLoaders=1', 'less-loader']
+        })
         // use: ExtractTextPlugin.extract({
         //   fallback: "style-loader",
         //   use: ['css-loader?modules', 'less-loader', 'postcss-loader']
@@ -91,7 +95,7 @@ module.exports = {
     // }),
 
     new ExtractTextPlugin({
-      filename: 'build.min.css',
+      filename: 'style.css',
       allChunks: true,
     })
   ]
